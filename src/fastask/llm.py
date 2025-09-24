@@ -20,7 +20,8 @@ class LLM:
         self.name = name
 
     def using(self):
-        print(f"\033[91mFASTASK: Using {self.name}\033[0m")
+        pass
+        #print(f"\033[91mFASTASK: Using {self.name}\033[0m")
 
 class FastAskClient(LLM):
     def __init__(self):
@@ -99,7 +100,7 @@ class OpenAIClient(LLM):
         )
         response = client.chat.completions.create(
             messages=messages,
-            model="gpt-3.5-turbo-0125"
+            model="gpt-4.1-nano"
         )
         return {"response": response.choices[0].message.content}
 
